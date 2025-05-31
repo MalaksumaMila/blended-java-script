@@ -101,19 +101,18 @@
 // то вивести в alert рядок "Добрий день!",
 // в іншому випадку вивести в alert рядок "Невірний пароль!"
 
+// const login = prompt("Введіть ваш логін:");
+// if (login === "Адмін") {
+//   const password = prompt("Введіть ваш пароль:");
+//   else if (login === null || login === "") {
+//     alert("Скасовано");
+//   } else {
+//     alert("Я вас не знаю");
+//   }
 
-const login = prompt("Введіть ваш логін:");
-if (login === "Адмін") {
-  const password = prompt("Введіть ваш пароль:");
-  else if (login === null || login === "") {
-    alert("Скасовано");
-  } else {
-    alert("Я вас не знаю");
-  }
-
-  if (password === "Я головний") {
-    alert("Добрий день!");
-  } else {
-    alert("Невірний пароль!");
-  }
-}
+//   if (password === "Я головний") {
+//     alert("Добрий день!");
+//   } else {
+//     alert("Невірний пароль!");
+//   }
+// }
