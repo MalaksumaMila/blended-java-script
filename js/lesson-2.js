@@ -91,10 +91,10 @@
 // user.hobby = "skydiving";
 // user.premium = false;
 
-// // const userKeys = Object.keys(user);
-// // for (const key of userKeys) {
-// //   console.log(`${key} : ${user[key]}`);
-// // }
+// const userKeys = Object.keys(user);
+// for (const key of userKeys) {
+//   console.log(`${key} : ${user[key]}`);
+// }
 
 // const userArrs = Object.entries(user);
 // for (const arr of userArrs) {
@@ -106,8 +106,84 @@
 // збережіть його результат в змінній sum.
 // Якщо об'єкт salaries пустий, то результат має бути 0
 
-const salaries = {
-  Mango: 100,
-  Poly: 160,
-  Ajax: 1470,
+// const salaries = {
+//   Mango: 100,
+//   Poly: 160,
+//   Ajax: 1470,
+// };
+
+// let summa = 0;
+
+// const values = Object.values(salaries);
+// for (const value of values) {
+//   summa += value;
+// }
+
+// console.log(summa);
+
+// Створіть об'єкт calculator з наступними методами:
+// read(a, b) - приймає два аргумента і зберігає їх як властивості об'єкта,
+// sum() - повертає сумму збереженних значень (з перевіркою на наявність властивостей в об'єкті),
+// mult() - перемножає збереженні значення і повертає результат (з перевіркою на наявність властивостей в об'єкті),
+// винесіть перевірку на наявність властивостей в об'єкті в окремий метод exist().
+
+// Якщо вказані властивості в обʼєкті відсутні (тобто метод exist повертає false),
+// методи sum і mult мають повертати рядок 'No such propeties'
+
+const calculator = {
+  read(a, b) {
+    this.a = a;
+    this.b = b;
+  },
+
+  exist() {
+    return this.a !== undefined && this.b !== undefined;
+  },
+
+  sum() {
+    if (!this.exist()) {
+      return "No such properties";
+    }
+    return this.a + this.b;
+  },
+
+  mult() {
+    if (!this.exist()) {
+      return "No such properties";
+    }
+    return this.a * this.b;
+  },
 };
+
+// Створіть телефонну книгу - об'єкт phonebook,
+// у якого є властивість contacts (список контактів)
+// та методи управління книгою:
+// add(data) - приймає об'єкт data, де передається
+// name і email, category може передаватись чи ні,
+// всередині метода add створіть обʼєкт newContact з властивостями  name, email, category, id, createdAt
+// (name i email - обов'язкові параметри, які треба передавати
+// при додаванні нового контакта,
+// category - може передаватись чи ні, якщо ні - має
+// приймати значення "default",
+// id та createdAt генеруються відповідними методами:
+// generateId() і getDate());
+// і додає newContact до списку контактів contacts;
+// *не забудьте додати перевірку, якщо контакт з таким ім'ям чи імейлом вже є - ми його не додаємо
+// list() - виводить список контактів у вигляді таблиці;
+// filtered(category) - фільтрує контактів по обраній категорії (друзі, робота і т.д.);
+// delete(name) - видаляє контакт з заданим ім'ям;
+// updateName(oldName, newName) - змінює ім'я контакта;
+// const phonebook = {
+//     contacts: [],
+//     add(data) {},
+//     list() {},
+//     filtered(category) {},
+//     delete(name) {},
+//     updateName(oldName, newName) {},
+//     generateId() {
+//       return "#" + Math.random().toString(36).substr(2, 9);
+//     },
+//     getDate() {
+//       return Date.now();
+//     },
+//   };
